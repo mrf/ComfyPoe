@@ -77,6 +77,10 @@ Each node returns:
 - `image` - Output image tensor (compatible with all ComfyUI image nodes)
 - `raw_response` - Full API response text (useful for debugging)
 
+## Security Note
+
+**Do not share workflow files (.json) that contain your API key.** The key is stored in plain text within the workflow. Remove it before sharing or use environment variables in your setup.
+
 ## Requirements
 
 - ComfyUI
