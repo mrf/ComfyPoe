@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ComfyPoe"
+version = "0.1.0"
+description = "ComfyUI nodes for image generation via Poe API"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "Mark Fisher"}
+]
+keywords = ["comfyui", "poe", "image-generation", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "openai>=1.0.0",
+    "requests>=2.28.0",
+    "pillow>=9.0.0",
+    "numpy>=1.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mrf/ComfyPoe"
+Repository = "https://github.com/mrf/ComfyPoe"
+Issues = "https://github.com/mrf/ComfyPoe/issues"
+
+[tool.setuptools]
+py-modules = ["poe_image_nodes"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]
+"tests/*" = ["F401"]
+
